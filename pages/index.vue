@@ -3,14 +3,19 @@
     <section class="intro">
       <h1>Your Favourite Tech Blogs!!!</h1>
     </section>
-    <post-list />
+    <post-list :posts="loadedPosts" />
   </div>
 </template>
 
 <script>
-import PostPreview from "../components/PostPreview.vue";
+import { DUMMY_POSTS } from "~/store";
+
 export default {
-  components: { PostPreview }
+  data() {
+    return {
+      loadedPosts: DUMMY_POSTS
+    };
+  }
 };
 </script>
 
